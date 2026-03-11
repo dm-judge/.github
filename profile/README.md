@@ -181,3 +181,14 @@ LLM 문제 생성 플로우는 여러 서비스를 거치는 복잡한 작업입
 
 
 </div>
+
+---
+
+<br />
+
+# Info.
+
+|  |  |
+|--------|------|
+| Developer | [@dalmengs](https://github.com/dalmengs) |
+| Email | dalmenglee@gmail.com |
