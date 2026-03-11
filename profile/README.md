@@ -3,14 +3,18 @@
 > **단순한 채점 사이트가 아닌, 분산 시스템 설계를 직접 구현한 프로젝트입니다.**  
 > 채점의 신뢰성, 실시간성, 확장성을 동시에 달성하기 위해 고민한 흔적을 담았습니다.
 
-<br />
 
 ### 앵커 링크 [빠르게 핵심만 보기] 
 
 - [🚀 기술적 설계 포인트로 이동하기!](#-기술적-설계-포인트)
 - [🚀 아키텍처 사진으로 이동하기!](#️-시스템-아키텍처)
+- [🚀 프로젝트 코드 보기!](#-코드)
 
-<br/>
+
+### 하이퍼 링크
+
+- [메인 시연 영상 보러가기](https://vimeo.com/1172569783)
+
 
 ## 📌 프로젝트 소개
 
@@ -124,19 +128,21 @@ LLM 문제 생성 플로우는 여러 서비스를 거치는 복잡한 작업입
 
 <br/>
 
-## 📂 관련 레포지토리
+## 📂 코드
 
-> 각 서비스는 독립적인 레포지토리로 관리됩니다.
+> 모든 코드는 공개돼 있고, 각 서비스는 독립적인 레포지토리로 관리됩니다.
 
 | 서비스 | 설명 | 링크 |
 |--------|------|------|
-| Frontend | Next.js 클라이언트 | - |
-| Gateway | Spring Boot API Gateway | - |
-| Auth/User | 인증 및 사용자 서비스 | - |
-| Problem | 문제 관리 + LLM 생성 | - |
-| Submit | 제출 접수 서비스 | - |
-| Realtime | SSE 스트리밍 서비스 | - |
-| Judge | Python 채점 서버 | - |
+| Auth | 인증 및 사용자 서비스 | [리포지토리 이동](https://github.com/dm-judge/dm-judge-backend-auth) |
+| Problem | 문제 관리 서비스 | [리포지토리 이동](https://github.com/dm-judge/dm-judge-backend-problem) |
+| Submit | 제출 데이터 관리 서비스 | [리포지토리 이동](https://github.com/dm-judge/dm-judge-backend-submit) |
+| Realtime | SSE 스트리밍 서비스 | [리포지토리 이동](https://github.com/dm-judge/dm-judge-backend-realtime) |
+| Judge | 채점 서버 | [리포지토리 이동](https://github.com/dm-judge/dm-judge-backend-judge) |
+| Inference | LLM 문제 생성 파이프라인 | [리포지토리 이동](https://github.com/dm-judge/dm-judge-inference) |
+| Gateway | Spring Cloud Gateway | [리포지토리 이동](https://github.com/dm-judge/dm-judge-backend-gateway) |
+| Flyway | 데이터베이스 스키마 중앙 관리 | [리포지토리 이동](https://github.com/dm-judge/dm-judge-database-flyway) |
+| Infra | 기타 인프라 Docker Compose | [리포지토리 이동](https://github.com/dm-judge/dm-judge-database) |
 
 <br/>
 
