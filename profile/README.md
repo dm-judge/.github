@@ -3,6 +3,7 @@
 > **단순한 채점 사이트가 아닌, 분산 시스템 설계를 직접 구현한 프로젝트입니다.**  
 > 채점의 신뢰성, 실시간성, 확장성을 동시에 달성하기 위해 고민한 흔적을 담았습니다.
 
+<br />
 
 ### 앵커 링크 | 빠르게 핵심만 보기
 
@@ -11,23 +12,20 @@
 - [💻 프로젝트 코드 보기!](#-코드)
 - [📀 시연 영상 보기!](#직접-만든-시스템이-어떻게-동작하는지-영상으로-확인해보세요)
 
-<br />
-
 -----
 
 ### 더 자세히 보기
 
 > 기술적으로 더 자세한 디테일과 더 많은 자료 및 시연 영상을 보실 수 있습니다.
 
-- <a href="https://github.com/dm-judge/.github/docs/infra.md" target="_blank">🔗 채점 서버의 기술적 원리</a>
+- <a href="https://github.com/dm-judge/.github/blob/main/profile/docs/infra.md" target="_blank">🔗 채점 서버의 기술적 원리</a>
 
-- <a href="https://github.com/dm-judge/.github/docs/outbox.md" target="_blank">🔗 LLM 자동 문제 생성기의 원리와 SAGA 패턴이 어떻게 사용되었는가 </a>
+- <a href="https://github.com/dm-judge/.github/blob/main/profile/docs/saga.md" target="_blank">🔗 LLM 자동 문제 생성기의 원리와 SAGA 패턴이 어떻게 사용되었는가 </a>
 
-- <a href="https://github.com/dm-judge/.github/docs/outbox.md" target="_blank">🔗 Outbox 패턴에 대한 기술적 분석 </a>
+- <a href="https://github.com/dm-judge/.github/blob/main/profile/docs/outbox.md" target="_blank">🔗 Outbox 패턴에 대한 기술적 분석 </a>
 
-- <a href="https://github.com/dm-judge/.github/docs/demos.md" target="_blank">🔗 재채점, 부분 점수 등 다양한 시연 영상</a>
+- <a href="https://github.com/dm-judge/.github/blob/main/profile/docs/demos.md" target="_blank">🔗 재채점, 부분 점수 등 다양한 시연 영상</a>
 
-<br />
 
 ---
 
@@ -36,6 +34,8 @@
 
 `# MSA`, `# Kafka`, `# Outbox Pattern`, `# SAGA Pattern`, `# 보상 트랜잭션`, `# 비동기 이벤트 기반처리`, `# 아키텍쳐`, `# 멱등성(Idempotency)`, `# 메시징 큐`, `# 실시간 데이터 처리`
 
+
+<br />
 
 ## 📌 프로젝트 소개
 
@@ -64,14 +64,6 @@ BOJ, Codeforces 등의 서비스에서 영감을 받아, 직접 MSA 아키텍처
 
 ![Architectures](./images/architectures.png)
 
-### 통신 방식
-
-```
-동기 내부 통신  → gRPC          (초저지연 서비스 간 직접 호출)
-비동기 이벤트   → Kafka         (이벤트 드리븐, 서비스 간 결합도 최소화)
-채점 큐        → RabbitMQ      (한 번에 하나의 채점 요청 보장)
-실시간 푸시    → Redis Pub/Sub  (채점 상태 브로드캐스트)
-```
 
 <br/>
 
@@ -147,15 +139,13 @@ LLM 문제 생성 플로우는 여러 서비스를 거치는 복잡한 작업입
 - 메시지 유형에 따라 **Inbox 패턴** 적용 — 수신 측에서 처리 여부를 DB에 기록하여 중복 실행 차단
 - 주로 Delta 기반 이벤트(예시: 포인트 100 추가)에 **Inbox 패턴**을 집중적으로 적용**
 
-
-<br />
 <br />
 
 ### ❓ 기술적으로 더 보고 싶으면..?
 
-- LLM 문제 생성기 원리와 SAGA 패턴의 사용은 [여기](https://github.com/dm-judge/.github/docs/saga.md)를 클릭해주세요.
-- Outbox 패턴의 사용과 기술적 분석은 [여기](https://github.com/dm-judge/.github/docs/outbox.md)를 클릭해주세요.
-- 실시간 채점 서버의 기술적 원리와 인프라 구성은 [여기](https://github.com/dm-judge/.github/docs/infra.md)를 클릭해주세요.
+- LLM 문제 생성기 원리와 SAGA 패턴의 사용은 [여기](https://github.com/dm-judge/.github/blob/main/profile/docs/saga.md)를 클릭해주세요.
+- Outbox 패턴의 사용과 기술적 분석은 [여기](https://github.com/dm-judge/.github/blob/main/profile/docs/outbox.md)를 클릭해주세요.
+- 실시간 채점 서버의 기술적 원리와 인프라 구성은 [여기](https://github.com/dm-judge/.github/blob/main/profile/docs/infra.md)를 클릭해주세요.
 
 ## 📂 코드
 
@@ -182,7 +172,7 @@ LLM 문제 생성 플로우는 여러 서비스를 거치는 복잡한 작업입
 
 #### 직접 만든 시스템이 어떻게 동작하는지 영상으로 확인해보세요.
 
-#### 더 다양한 시연 영상은 <a href="https://github.com/dm-judge/.github/docs/demos.md" target="_blank">여기</a>를 클릭해주세요.
+#### 더 다양한 시연 영상은 <a href="https://github.com/dm-judge/.github/blob/main/profile/docs/demos.md" target="_blank">여기</a>를 클릭해주세요.
 
 
 ![Judge Demo](./images/default.gif)
